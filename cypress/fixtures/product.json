@@ -1,5 +1,10 @@
 {
   "nome": "Produto de Teste",
   "valor": "150",
-  "cor": "Vermelho"
+  "cor": "Vermelho",
+  "nome2": "Produto de Teste2",
+  "valor2": "8000000",
+  "cor2": "Vermelho2",
+  "nomeComponente": "Parafuso",
+  "qntComponente": "2000"
 }
