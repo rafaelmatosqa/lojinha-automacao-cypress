@@ -6,3 +6,11 @@ Este projeto é uma automação de testes utilizando o Cypress.io, aplicada sobr
 - [Boas práticas de Cypress.io (Best Practices) - Parte 2](https://pedrohsguerra.medium.com/boas-pr%C3%A1ticas-de-cypress-io-best-practices-parte-2-c67163adcd21)
 
   Este projeto atende aos requisitos do Desafio 4 da mentoria de testes de software, focando na implementação de testes automatizados de qualidade e seguindo padrões recomendados.
+
+# Integrantes do Grupo 2:
+
+Aline Pereira
+Jéssica Lima Carvalho 
+Rafael Matos
+Renato Nagashima
+Viviane Prestes Soares
