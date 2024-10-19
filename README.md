@@ -9,8 +9,8 @@ Este projeto é uma automação de testes utilizando o Cypress.io, aplicada sobr
 
 # Integrantes do Grupo 2:
 
-Aline Pereira
-Jéssica Lima Carvalho 
-Rafael Matos
-Renato Nagashima
-Viviane Prestes Soares
+- Aline Pereira
+- Jéssica Lima Carvalho 
+- Rafael Matos
+- Renato Nagashima
+- Viviane Prestes Soares
