@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "test:report": "cypress run --reporter cypress-mochawesome-reporter"
+    "test": "npx cypress run --reporter cypress-mochawesome-reporter"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +14,8 @@
     "cypress-mochawesome-reporter": "^3.8.2",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0"
+  },
+  "dependencies": {
+    "lojinha-automacao-cypress": "file:"
   }
 }
