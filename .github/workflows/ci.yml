@@ -1,0 +1,55 @@
+name: Execute testes com Cypress
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+    env:
+      USERNAME: ${{ secrets.GITHUB_USERNAME }}
+      PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
+
+    steps:
+      # Step 1: Checkout the repository
+      - uses: actions/checkout@v3
+
+      # Step 2: Setup Node.js environment
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+
+      # Step 3: Cache Node.js modules for faster builds
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # Step 4: Install dependencies
+      - name: Instalar dependências
+        run: npm install
+
+      # Step 5: Run Cypress tests
+      - name: Executar testes Cypress
+        run: npm test
+
+      # Step 6: Upload test results for debugging
+      - name: Upload Cypress results
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-results
+          path: cypress/results/
+
+      # Step 7: Always upload screenshots and videos from Cypress (even on success)
+      - name: Upload Cypress screenshots and videos
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-artifacts
+          path: cypress/{screenshots,videos}/
