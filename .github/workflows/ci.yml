@@ -9,8 +9,8 @@ jobs:
   cypress-tests:
     runs-on: ubuntu-latest
     env:
-      USERNAME: ${{ secrets.GITHUB_USERNAME }}
-      PASSWORD: ${{ secrets.GITHUB_PASSWORD }}
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
 
     steps:
       # Step 1: Checkout the repository
@@ -39,7 +39,7 @@ jobs:
       - name: Executar testes Cypress
         run: npm test
 
-      # Step 6: Upload test results for debugging
+      # Step 6: Upload test results for debugging in case of failure
       - name: Upload Cypress results
         if: failure()
         uses: actions/upload-artifact@v3
@@ -47,9 +47,11 @@ jobs:
           name: cypress-results
           path: cypress/results/
 
-      # Step 7: Always upload screenshots and videos from Cypress (even on success)
+      # Step 7: Always upload screenshots and videos from Cypress
       - name: Upload Cypress screenshots and videos
         uses: actions/upload-artifact@v3
         with:
           name: cypress-artifacts
-          path: cypress/{screenshots,videos}/
+          path: |
+            cypress/screenshots/
+            cypress/videos/
