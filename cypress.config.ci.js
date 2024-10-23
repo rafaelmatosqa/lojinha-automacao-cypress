@@ -6,6 +6,9 @@ module.exports = defineConfig({
     
     USERNAME: process.env.USERNAME,
     PASSWORD: process.env.PASSWORD,
-  },
-  
+    
+  }
 });
+
+console.log("USERNAME:", process.env.USERNAME);
+console.log("PASSWORD:", process.env.PASSWORD);
