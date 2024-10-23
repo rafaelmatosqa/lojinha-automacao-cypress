@@ -8,8 +8,7 @@ describe('Teste de Adição de Produto na Lojinha', () => {
     cy.login();
 
     // Valida o texto de boas-vindas
-    cy.contains(`Boas vindas, ${Cypress.env("USERNAME").charAt(0).toUpperCase() + Cypress.env("USERNAME").slice(1)}!`).should('be.visible');
-
+      cy.contains(`Boas vindas, Desafio3!`).should('be.visible');
     // Navega para a tela de adicionar produto
     cy.get('.waves-effect').click();
 
